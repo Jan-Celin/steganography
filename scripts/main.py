@@ -22,16 +22,22 @@ if selected_option == "Encode Data":
         uploaded_image = st.file_uploader("Choose an image file")
 
         if uploaded_image is not None:
-            st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
+            # Check if the uploaded file is an image
+            if not uploaded_image.name.lower().endswith(('.png', '.jpg', '.jpeg')):
+                st.error("Please upload a valid image file (PNG, JPG, JPEG).")
+                uploaded_image = None
+            else:
 
-            image_extension = Path(uploaded_image.name).suffix
-            
-            with open(f"data/uploaded_image{image_extension}", "wb") as f:
-                f.write(uploaded_image.getbuffer())
+                st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
 
-            st.success("Image uploaded successfully!")
+                image_extension = Path(uploaded_image.name).suffix
+                
+                with open(f"data/uploaded_image{image_extension}", "wb") as f:
+                    f.write(uploaded_image.getbuffer())
 
-            st.session_state.uploaded_image_path = f"data/uploaded_image{image_extension}"
+                st.success("Image uploaded successfully!")
+
+                st.session_state.uploaded_image_path = f"data/uploaded_image{image_extension}"
 
     with col2:
         st.header("Upload File")
