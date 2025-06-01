@@ -485,7 +485,7 @@ if selected_option == "Encode Data":
         uploaded_image = st.file_uploader("Choose an image file")
 
         if uploaded_image is not None:
-            st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
+            st.image(uploaded_image, caption="Uploaded Image", use_container_width=True)
 
             image_extension = Path(uploaded_image.name).suffix
             
