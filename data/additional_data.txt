@@ -1,0 +1,1 @@
+This text will be encoded into the image.
