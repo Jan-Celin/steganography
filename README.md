@@ -1,5 +1,7 @@
 # Steganography
 
+Link for interactive UI: [steganografija.streamlit.app](https://steganografija.streamlit.app/)
+
 This repository explores different methods of hiding data within images.
 
 The project was done as part of the Digital Image Processing and Analysis course at FER. \
