@@ -72,7 +72,7 @@ if selected_option == "Encode Data":
             try:
                 in_img = cv2.imread(st.session_state.uploaded_image_path)
                 data = st.session_state.uploaded_data_path
-                encoded_image, mask = encode(in_img, data, n=-1, VERBOSE=False)
+                encoded_image, mask = encode(in_img, data, n=-1, verbose=False)
 
                 cv2.imwrite("encoded_image.png", encoded_image)
                 st.image("encoded_image.png", caption="Encoded Image", width=300)
@@ -111,7 +111,7 @@ else:
                 if in_img is None:
                     st.error("Failed to read the image. Please check the file format.")
                 else:
-                    decoded_data, (add_data_bitstream, extension) = decode(in_img, VERBOSE=False)
+                    decoded_data, (add_data_bitstream, extension) = decode(in_img, verbose=False)
                     if add_data_bitstream:
                         st.write(f"Extracted data size: {len(add_data_bitstream)} bits")
                         st.write(f"File type: {extension}")
