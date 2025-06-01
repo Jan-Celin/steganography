@@ -56,7 +56,7 @@ if selected_option == "Encode Data":
                 st.write(f"File {uploaded_data.name} uploaded successfully!")
                 data_extension = Path(uploaded_data.name).suffix
 
-                with open(f"uploaded_data{data_extension}", "wb") as f:
+                with open(f"data/uploaded_data{data_extension}", "wb") as f:
                     f.write(uploaded_data.getbuffer())
 
                 st.success("Data file uploaded successfully!")
@@ -123,7 +123,7 @@ else:
                         st.download_button(
                             label="Download Recovered File",
                             data=open(output_path, "rb").read(),
-                            file_name=f"data/recovered_file{extension}",
+                            file_name=f"recovered_file{extension}",
                             mime="application/octet-stream"
                         )
                     else:
