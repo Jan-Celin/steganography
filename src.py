@@ -524,7 +524,7 @@ if selected_option == "Encode Data":
 
                 st.success("Data file uploaded successfully!")
 
-                data_bits = file_to_bits("uploaded_data")
+                data_bits = file_to_bits(f"uploaded_data{data_extension}")
                 st.write(f"Data size in bits: {len(data_bits)} bits")
 
                 st.session_state.uploaded_data_path = f"uploaded_data{data_extension}"
