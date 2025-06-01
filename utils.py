@@ -1,6 +1,5 @@
 import math
 
-
 def convert_bytes(size_in_bits):
     # Converts size in bits to a human-readable format (Bytes, KB, MB, GB)
     size_in_bytes = size_in_bits / 8
